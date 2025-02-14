@@ -88,7 +88,7 @@ contract ERC20{
 
     function pause() public {
         require(msg.sender == _owner);
-        _paused = true;
+        _paused = (_paused ? false : true);
     }
 
     function _toTypedDataHash(bytes32 hash) public pure returns (bytes32){
