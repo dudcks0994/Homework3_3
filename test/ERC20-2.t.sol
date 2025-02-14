@@ -43,6 +43,7 @@ contract UpsideTokenTest is Test {
 
         assertEq(upside_token.nonces(alice), 0);
         upside_token.permit(alice, address(this), 10 ether, 1 days, v, r, s);
+        console.logUint(upside_token.nonces(alice));
 
         assertEq(upside_token.allowance(alice, address(this)), 10 ether);
         assertEq(upside_token.nonces(alice), 1);
